@@ -15,6 +15,8 @@ class ModelData: ObservableObject {
     // 使用Published修复属性后, 当属性改变时回主动发送消息, 订阅改消息的view就能及时获取最新状态
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     
+    @Published var profile = Profile.default
+    
     // 加载徒步旅行数据, 该数据无需修改无需使用 @Published修饰
     let hikes: [Hike] = load("hikeData.json")
     

@@ -9,16 +9,14 @@ import SwiftUI
 
 struct CategoryHome: View {
     @EnvironmentObject var modelData: ModelData
+    @State private var showingProfile = false
     
     var body: some View {
         NavigationView {
             List {
                 // 1.0 添加图片
-                modelData.features[1].image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+                PageView(pages: modelData.features.map {FeatureCard(lanmark: $0)})
+                    .aspectRatio(3.0/2.0, contentMode: .fit)
                     .listRowInsets(EdgeInsets())
                 
                 // 2.0 添加分类
@@ -28,7 +26,19 @@ struct CategoryHome: View {
                 }
                 .listRowInsets(EdgeInsets())
             }
+            .listStyle(.inset)
             .navigationTitle("Featured")
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                }
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfilHost()
+                    .environmentObject(modelData)
+            }
         }
     }
 }

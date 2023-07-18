@@ -39,9 +39,15 @@ struct CategoryRow: View {
 struct CategoryRow_Previews: PreviewProvider {
     static var landmarks = ModelData().landmarks
     static var previews: some View {
-        CategoryRow(
-            categoryName: landmarks[0].category.rawValue,
-            items: Array(landmarks.prefix(3)))
-        .background(.red)
+        if #available(iOS 15.0, *) {
+            CategoryRow(
+                categoryName: landmarks[0].category.rawValue,
+                items: Array(landmarks.prefix(3)))
+            .background(.red)
+        } else {
+            CategoryRow(
+                categoryName: landmarks[0].category.rawValue,
+                items: Array(landmarks.prefix(3)))
+        }
     }
 }
