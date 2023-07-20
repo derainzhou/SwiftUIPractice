@@ -14,6 +14,7 @@ struct CS193pApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ModelData())
         }
     }
 }
