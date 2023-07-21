@@ -7,24 +7,38 @@
 
 import WidgetKit
 import SwiftUI
+import Intents
 
 // MARK: - TimelineProvider
-struct Provider: TimelineProvider {
-    // 用于占位视图与快照
-    let sampleEpisode = Episode(
-      id: "5117655",
-      uri: "rw://betamax/videos/3021",
-      name: "SwiftUI vs. UIKit",
-      parentName: nil,
-      released: "Sept 2019",
-      difficulty: "beginner",
-      description: "Learn about the differences between SwiftUI and"
-        + "UIKit, and whether you should learn SwiftUI, UIKit, or "
-        + "both.\n" ,
-      domain: "iOS & Swift")
+struct Provider: IntentTimelineProvider {
     
-    // 实时数据, fetchContent()
-    let store = EpisodeStore()
+    let sampleEpisode = MiniEpisode(
+      id: "5117655",
+      name: "SwiftUI vs. UIKit",
+      released: "Sept 2019",
+      domain: "iOS & Swift",
+      difficulty: "beginner",
+      description: "Learn about the differences between SwiftUI and UIKit, " +
+        "and whether you should learn SwiftUI, UIKit, or both.\n")
+
+    func readEpisodes() -> [MiniEpisode] {
+      var episodes: [MiniEpisode] = []
+      let archiveURL =
+        FileManager.sharedContainerURL()
+        .appendingPathComponent("episodes.json")
+      print(">>> \(archiveURL)")
+
+      if let codeData = try? Data(contentsOf: archiveURL) {
+        do {
+          episodes = try JSONDecoder().decode(
+            [MiniEpisode].self,
+            from: codeData)
+        } catch {
+          print("Error: Can't decode contents")
+        }
+      }
+      return episodes
+    }
     
     /// 占位视图
     func placeholder(in context: Context) -> SimpleEntry {
@@ -38,15 +52,16 @@ struct Provider: TimelineProvider {
     }
 
     /// Timeline, 提供entries
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    
+    func getTimeline(co in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        // 创建timeline
+         let episodes = readEpisodes()
         var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         let interval = 3
-        for index in 0 ..< store.episodes.count {
+        for index in 0 ..< episodes.count {
             let entryDate = Calendar.current.date(byAdding: .second, value: index * interval, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, episode: store.episodes[index])
+            let entry = SimpleEntry(date: entryDate, episode: episodes[index])
             entries.append(entry)
         }
 
@@ -58,7 +73,7 @@ struct Provider: TimelineProvider {
 // MARK:- Entry 与 EntryView (模型与视图层)
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let episode: Episode
+    let episode: MiniEpisode
 }
 
 struct CS193pWidgetEntryView : View {
@@ -80,7 +95,7 @@ struct CS193pWidgetEntryView : View {
                         HStack {
                             Text(entry.episode.released + " ")
                             Text(entry.episode.domain + " ")
-                            Text(entry.episode.difficulty?.capitalized ?? "")
+                            Text(entry.episode.difficulty.capitalized)
                         }
                     } else {
                         Text(entry.episode.released + " ")
@@ -98,6 +113,7 @@ struct CS193pWidgetEntryView : View {
         .background(Color("item-bkgd"))
         .font(.footnote)
         .foregroundColor(Color(.systemGray))
+        .widgetURL(URL(string: "CS193p://\(entry.episode.id)"))
     }
 }
 struct CS193pWidget: Widget {
@@ -110,7 +126,6 @@ struct CS193pWidget: Widget {
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
         .supportedFamilies([.systemMedium])
-        
     }
 }
 

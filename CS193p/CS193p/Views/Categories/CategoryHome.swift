@@ -40,6 +40,9 @@ struct CategoryHome: View {
                     .environmentObject(modelData)
             }
         }
+        .onOpenURL { url in
+            NSLog("WidgetURL_home: \(url)")
+        }
     }
 }
 

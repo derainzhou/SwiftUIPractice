@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841F74002A6A92470009A7BC /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F73EF2A6A8ED40009A7BC /* Intents.framework */; };
+		841F74032A6A92470009A7BC /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F74022A6A92470009A7BC /* IntentHandler.swift */; };
+		841F74072A6A92470009A7BC /* CS193pIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 841F73FF2A6A92470009A7BC /* CS193pIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		841F740C2A6A92D50009A7BC /* Configuration.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 841F740B2A6A92D50009A7BC /* Configuration.intentdefinition */; };
+		841F740D2A6A92D50009A7BC /* Configuration.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 841F740B2A6A92D50009A7BC /* Configuration.intentdefinition */; };
 		842A26B52A64E6F7007E276B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A26B42A64E6F7007E276B /* Profile.swift */; };
 		842A26B72A64E7C9007E276B /* ProfilHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A26B62A64E7C9007E276B /* ProfilHost.swift */; };
 		842A26B92A64E861007E276B /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A26B82A64E861007E276B /* ProfileSummary.swift */; };
@@ -65,6 +70,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		841F74052A6A92470009A7BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFB16FA529B7585400C54CDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 841F73FE2A6A92470009A7BC;
+			remoteInfo = CS193pIntent;
+		};
 		843148712A67D031002C4025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AFB16FA529B7585400C54CDF /* Project object */;
@@ -82,6 +94,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				843148732A67D031002C4025 /* CS193pWidgetExtension.appex in Embed Foundation Extensions */,
+				841F74072A6A92470009A7BC /* CS193pIntent.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +102,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		841F73E82A6A44A70009A7BC /* CS193p.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CS193p.entitlements; sourceTree = "<group>"; };
+		841F73E92A6A45B90009A7BC /* CS193pWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CS193pWidgetExtension.entitlements; sourceTree = "<group>"; };
+		841F73EF2A6A8ED40009A7BC /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		841F73F22A6A8ED40009A7BC /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		841F73F42A6A8ED40009A7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841F73FF2A6A92470009A7BC /* CS193pIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CS193pIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		841F74022A6A92470009A7BC /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		841F74042A6A92470009A7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841F740B2A6A92D50009A7BC /* Configuration.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Configuration.intentdefinition; sourceTree = "<group>"; };
 		842A26B42A64E6F7007E276B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		842A26B62A64E7C9007E276B /* ProfilHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilHost.swift; sourceTree = "<group>"; };
 		842A26B82A64E861007E276B /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
@@ -143,6 +165,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		841F73FC2A6A92470009A7BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841F74002A6A92470009A7BC /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		843148632A67D030002C4025 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +192,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841F73F12A6A8ED40009A7BC /* CS193pIntent */ = {
+			isa = PBXGroup;
+			children = (
+				841F73F22A6A8ED40009A7BC /* IntentHandler.swift */,
+				841F73F42A6A8ED40009A7BC /* Info.plist */,
+			);
+			path = CS193pIntent;
+			sourceTree = "<group>";
+		};
+		841F74012A6A92470009A7BC /* CS193pIntent */ = {
+			isa = PBXGroup;
+			children = (
+				841F74022A6A92470009A7BC /* IntentHandler.swift */,
+				841F74042A6A92470009A7BC /* Info.plist */,
+			);
+			path = CS193pIntent;
+			sourceTree = "<group>";
+		};
 		842A26B32A64E6D6007E276B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +251,7 @@
 				8431486E2A67D031002C4025 /* Assets.xcassets */,
 				843148702A67D031002C4025 /* Info.plist */,
 				84FF607C2A695412002508F9 /* PlayButtonIcon.swift */,
+				841F740B2A6A92D50009A7BC /* Configuration.intentdefinition */,
 			);
 			path = CS193pWidget;
 			sourceTree = "<group>";
@@ -251,6 +300,7 @@
 			children = (
 				84A8EB7B2A67BB3900C1D7E9 /* WidgetKit.framework */,
 				84A8EB7D2A67BB3900C1D7E9 /* SwiftUI.framework */,
+				841F73EF2A6A8ED40009A7BC /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -325,8 +375,11 @@
 		AFB16FA429B7585400C54CDF = {
 			isa = PBXGroup;
 			children = (
+				841F73E92A6A45B90009A7BC /* CS193pWidgetExtension.entitlements */,
 				AFB16FAF29B7585400C54CDF /* CS193p */,
 				843148692A67D030002C4025 /* CS193pWidget */,
+				841F73F12A6A8ED40009A7BC /* CS193pIntent */,
+				841F74012A6A92470009A7BC /* CS193pIntent */,
 				84A8EB7A2A67BB3900C1D7E9 /* Frameworks */,
 				AFB16FAE29B7585400C54CDF /* Products */,
 			);
@@ -337,6 +390,7 @@
 			children = (
 				AFB16FAD29B7585400C54CDF /* CS193p.app */,
 				843148662A67D030002C4025 /* CS193pWidgetExtension.appex */,
+				841F73FF2A6A92470009A7BC /* CS193pIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +398,7 @@
 		AFB16FAF29B7585400C54CDF /* CS193p */ = {
 			isa = PBXGroup;
 			children = (
+				841F73E82A6A44A70009A7BC /* CS193p.entitlements */,
 				8454916D2A5FCD6D00DEA382 /* App */,
 				84C2AB832A613EFC0086FCDE /* Extension */,
 				84C2AB812A612E680086FCDE /* Views */,
@@ -366,6 +421,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		841F73FE2A6A92470009A7BC /* CS193pIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841F74082A6A92470009A7BC /* Build configuration list for PBXNativeTarget "CS193pIntent" */;
+			buildPhases = (
+				841F73FB2A6A92470009A7BC /* Sources */,
+				841F73FC2A6A92470009A7BC /* Frameworks */,
+				841F73FD2A6A92470009A7BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CS193pIntent;
+			productName = CS193pIntent;
+			productReference = 841F73FF2A6A92470009A7BC /* CS193pIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		843148652A67D030002C4025 /* CS193pWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 843148742A67D031002C4025 /* Build configuration list for PBXNativeTarget "CS193pWidgetExtension" */;
@@ -396,6 +468,7 @@
 			);
 			dependencies = (
 				843148722A67D031002C4025 /* PBXTargetDependency */,
+				841F74062A6A92470009A7BC /* PBXTargetDependency */,
 			);
 			name = CS193p;
 			productName = CS193p;
@@ -412,6 +485,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					841F73FE2A6A92470009A7BC = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					843148652A67D030002C4025 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -435,11 +511,19 @@
 			targets = (
 				AFB16FAC29B7585400C54CDF /* CS193p */,
 				843148652A67D030002C4025 /* CS193pWidgetExtension */,
+				841F73FE2A6A92470009A7BC /* CS193pIntent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		841F73FD2A6A92470009A7BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		843148642A67D030002C4025 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +546,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		841F73FB2A6A92470009A7BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841F74032A6A92470009A7BC /* IntentHandler.swift in Sources */,
+				841F740D2A6A92D50009A7BC /* Configuration.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		843148622A67D030002C4025 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +566,7 @@
 				84FF608A2A6966B1002508F9 /* FormatterExtension.swift in Sources */,
 				84FF60882A6966B1002508F9 /* VideoURL.swift in Sources */,
 				8431486B2A67D030002C4025 /* CS193pWidgetBundle.swift in Sources */,
+				841F740C2A6A92D50009A7BC /* Configuration.intentdefinition in Sources */,
 				84FF60842A695E66002508F9 /* URLComponentsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +620,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		841F74062A6A92470009A7BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 841F73FE2A6A92470009A7BC /* CS193pIntent */;
+			targetProxy = 841F74052A6A92470009A7BC /* PBXContainerItemProxy */;
+		};
 		843148722A67D031002C4025 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 843148652A67D030002C4025 /* CS193pWidgetExtension */;
@@ -534,15 +633,74 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		841F74092A6A92470009A7BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CS193pIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CS193pIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tp.tpcleanerpro.pro.pIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		841F740A2A6A92470009A7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CS193pIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CS193pIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tp.tpcleanerpro.pro.pIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		843148752A67D031002C4025 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CS193pWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 789PQG3L64;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 789PQG3L64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CS193pWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CS193pWidget;
@@ -554,8 +712,10 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CS193p.CS193pWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = tp.tpcleanerpro.pro.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = pp_widget_dev;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -568,10 +728,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CS193pWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 789PQG3L64;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 789PQG3L64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CS193pWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CS193pWidget;
@@ -583,8 +746,10 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CS193p.CS193pWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = tp.tpcleanerpro.pro.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = pp_widget_dev;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -712,11 +877,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CS193p/CS193p.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CS193p/Preview Content\"";
-				DEVELOPMENT_TEAM = 789PQG3L64;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 789PQG3L64;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -730,9 +898,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CS193p;
+				PRODUCT_BUNDLE_IDENTIFIER = tp.tpcleanerpro.pro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = pp_tpcp_dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -745,11 +914,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CS193p/CS193p.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CS193p/Preview Content\"";
-				DEVELOPMENT_TEAM = 789PQG3L64;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 789PQG3L64;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -763,9 +935,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CS193p;
+				PRODUCT_BUNDLE_IDENTIFIER = tp.tpcleanerpro.pro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = pp_tpcp_dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -775,6 +948,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		841F74082A6A92470009A7BC /* Build configuration list for PBXNativeTarget "CS193pIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841F74092A6A92470009A7BC /* Debug */,
+				841F740A2A6A92470009A7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		843148742A67D031002C4025 /* Build configuration list for PBXNativeTarget "CS193pWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

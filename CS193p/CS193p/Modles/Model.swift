@@ -17,6 +17,8 @@ class ModelData: ObservableObject {
     
     @Published var profile = Profile.default
     
+    let episodeStore = EpisodeStore()
+    
     // 加载徒步旅行数据, 该数据无需修改无需使用 @Published修饰
     let hikes: [Hike] = load("hikeData.json")
     

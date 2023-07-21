@@ -37,7 +37,7 @@ extension FileManager {
   static func sharedContainerURL() -> URL {
     return FileManager.default.containerURL(
       forSecurityApplicationGroupIdentifier:
-        "group.your.prefix.RWFreeView.episodes"
+        "group.tp.tpcleanerpro.pro"
       // swiftlint:disable:next force_unwrapping
     )!
   }
@@ -112,8 +112,11 @@ final class EpisodeStore: ObservableObject, Decodable {
     "filter[q]": ""
   ]
   // 2
-  func fetchContents() {
-    guard var urlComponents = URLComponents(string: baseURLString) else { return }
+  func fetchContents(_ completion: @escaping (Error?) -> Void) {
+    guard var urlComponents = URLComponents(string: baseURLString) else {
+        completion(NSError(domain: "url is invalid", code: -1))
+        return
+    }
     urlComponents.setQueryItems(with: baseParams)
     let selectedDomains = domainFilters.filter {
       $0.value
@@ -135,7 +138,10 @@ final class EpisodeStore: ObservableObject, Decodable {
     urlComponents.queryItems! += domainQueryItems
     // swiftlint:disable:next force_unwrapping
     urlComponents.queryItems! += difficultyQueryItems
-    guard let contentsURL = urlComponents.url else { return }
+    guard let contentsURL = urlComponents.url else {
+        completion(NSError(domain: "url is invalid", code: -1))
+        return
+    }
     print(contentsURL)
 
     loading = true
@@ -160,20 +166,23 @@ final class EpisodeStore: ObservableObject, Decodable {
                 difficulty: $0.difficulty ?? "",
                 description: $0.description)
             }
-            // self.writeEpisodes()
+             // 将数据写入AppGroup
+             self.writeEpisodes()
             // 刷新小组件
-            WidgetCenter.shared.reloadTimelines(ofKind: "CS193pWidget")
+            completion(nil)
           }
           return
         }
       }
-      print("Contents fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        completion(NSError(domain: "Contents fetch failed: \(error?.localizedDescription ?? "Unknown error")", code: -1))
     }
     .resume()
   }
 
   init() {
-    fetchContents()
+      fetchContents { error in
+          WidgetCenter.shared.reloadTimelines(ofKind: "CS193pWidget")
+      }
   }
 
   // 1
