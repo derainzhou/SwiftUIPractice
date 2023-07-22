@@ -11,6 +11,6 @@ import SwiftUI
 @main
 struct CS193pWidgetBundle: WidgetBundle {
     var body: some Widget {
-        CS193pWidget()
+        CS193pSmallWidget()
     }
 }

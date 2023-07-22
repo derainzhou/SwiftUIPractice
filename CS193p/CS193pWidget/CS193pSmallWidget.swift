@@ -10,7 +10,12 @@ import SwiftUI
 import Intents
 
 // MARK: - TimelineProvider
-struct Provider: IntentTimelineProvider {
+struct CS193pSmallWidgetProvider: IntentTimelineProvider {
+
+    typealias Entry = SmallWidgetSimpleEntry
+    
+    typealias Intent = SmallWidgetConfigurationIntent
+    
     
     let sampleEpisode = MiniEpisode(
       id: "5117655",
@@ -41,27 +46,27 @@ struct Provider: IntentTimelineProvider {
     }
     
     /// 占位视图
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), episode: sampleEpisode)
+    func placeholder(in context: Context) -> SmallWidgetSimpleEntry {
+        SmallWidgetSimpleEntry(date: Date(), episode: sampleEpisode)
     }
 
     /// 快照
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), episode: sampleEpisode)
+    func getSnapshot(for configuration: SmallWidgetConfigurationIntent, in context: Context, completion: @escaping (SmallWidgetSimpleEntry) -> Void) {
+        let entry = SmallWidgetSimpleEntry(date: Date(), episode: sampleEpisode)
         completion(entry)
     }
 
     /// Timeline, 提供entries
-    
-    func getTimeline(co in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: SmallWidgetConfigurationIntent, in context: Context, completion: @escaping (Timeline<SmallWidgetSimpleEntry>) -> Void) {
+        
         // 创建timeline
          let episodes = readEpisodes()
-        var entries: [SimpleEntry] = []
+        var entries: [SmallWidgetSimpleEntry] = []
         let currentDate = Date()
         let interval = 3
         for index in 0 ..< episodes.count {
             let entryDate = Calendar.current.date(byAdding: .second, value: index * interval, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, episode: episodes[index])
+            let entry = SmallWidgetSimpleEntry(date: entryDate, episode: episodes[index])
             entries.append(entry)
         }
 
@@ -71,16 +76,16 @@ struct Provider: IntentTimelineProvider {
 }
 
 // MARK:- Entry 与 EntryView (模型与视图层)
-struct SimpleEntry: TimelineEntry {
+struct SmallWidgetSimpleEntry: TimelineEntry {
     let date: Date
     let episode: MiniEpisode
 }
 
-struct CS193pWidgetEntryView : View {
+struct CS193pWidgetSmallEntryView : View {
     // 获取小组件尺寸, 不同尺寸展示不同视图
     @Environment(\.widgetFamily) var family
     
-    var entry: Provider.Entry
+    var entry: CS193pSmallWidgetProvider.Entry
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -116,25 +121,23 @@ struct CS193pWidgetEntryView : View {
         .widgetURL(URL(string: "CS193p://\(entry.episode.id)"))
     }
 }
-struct CS193pWidget: Widget {
+struct CS193pSmallWidget: Widget {
     let kind: String = "CS193pWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            CS193pWidgetEntryView(entry: entry)
+        IntentConfiguration(kind: kind, intent: SmallWidgetConfigurationIntent.self, provider: CS193pSmallWidgetProvider()) { entry in
+            CS193pWidgetSmallEntryView(entry: entry)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemMedium])
+        .supportedFamilies([.systemSmall])
     }
 }
 
 struct CS193pWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let view = CS193pWidgetEntryView(entry: SimpleEntry(date: Date(), episode: Provider().sampleEpisode))
+        let view = CS193pWidgetSmallEntryView(entry: SmallWidgetSimpleEntry(date: Date(), episode: CS193pSmallWidgetProvider().sampleEpisode))
         
         view.previewContext(WidgetPreviewContext(family: .systemSmall))
-        view.previewContext(WidgetPreviewContext(family: .systemMedium))
-        view.previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }
