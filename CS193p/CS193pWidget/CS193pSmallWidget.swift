@@ -81,6 +81,21 @@ struct SmallWidgetSimpleEntry: TimelineEntry {
     let episode: MiniEpisode
 }
 
+extension View {
+     func widgetBackground() -> some View {
+         let color = Color(red: 255, green: 247, blue: 227)
+         if #available(iOSApplicationExtension 17.0, *) {
+             return containerBackground(for: .widget) {
+                 Color("item-bkgd")
+             }
+         } else {
+             return background {
+                 Color("item-bkgd")
+             }
+         }
+    }
+}
+
 struct CS193pWidgetSmallEntryView : View {
     // 获取小组件尺寸, 不同尺寸展示不同视图
     @Environment(\.widgetFamily) var family
@@ -115,7 +130,7 @@ struct CS193pWidgetSmallEntryView : View {
             }
         }
         .padding(.horizontal)
-        .background(Color("item-bkgd"))
+        .widgetBackground()
         .font(.footnote)
         .foregroundColor(Color(.systemGray))
         .widgetURL(URL(string: "CS193p://\(entry.episode.id)"))
@@ -138,6 +153,6 @@ struct CS193pWidget_Previews: PreviewProvider {
     static var previews: some View {
         let view = CS193pWidgetSmallEntryView(entry: SmallWidgetSimpleEntry(date: Date(), episode: CS193pSmallWidgetProvider().sampleEpisode))
         
-        view.previewContext(WidgetPreviewContext(family: .systemSmall))
+        view.previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

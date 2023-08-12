@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CS193Intent.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>CS193p.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>84A8EB782A67BB3900C1D7E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF3A6CE62A6ADE11004A6C30</key>
 		<dict>
 			<key>primary</key>
 			<true/>

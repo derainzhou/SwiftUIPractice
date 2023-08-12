@@ -38,7 +38,6 @@ extension FileManager {
     return FileManager.default.containerURL(
       forSecurityApplicationGroupIdentifier:
         "group.tp.tpcleanerpro.pro"
-      // swiftlint:disable:next force_unwrapping
     )!
   }
 }

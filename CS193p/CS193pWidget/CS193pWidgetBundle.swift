@@ -12,5 +12,6 @@ import SwiftUI
 struct CS193pWidgetBundle: WidgetBundle {
     var body: some Widget {
         CS193pSmallWidget()
+        CaffeineTrackerWidget()
     }
 }
