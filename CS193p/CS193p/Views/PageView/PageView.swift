@@ -29,3 +29,22 @@ struct PageView_Previews: PreviewProvider {
                 .aspectRatio(3 / 2, contentMode: .fit)
     }
 }
+
+struct ContentView2: View {
+    @State private var viewTransform: CGAffineTransform = .identity
+    var body: some View {
+        GeometryReader { geometry in
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 200, height: 200)
+        }
+    }
+}
+
+struct MyAnchorKey: PreferenceKey {
+    static var defaultValue: CGAffineTransform = .identity
+    static func reduce(value: inout CGAffineTransform, nextValue: () -> CGAffineTransform) {
+        value = nextValue()
+    }
+}
+

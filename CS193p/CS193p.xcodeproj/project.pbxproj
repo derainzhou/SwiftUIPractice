@@ -23,6 +23,8 @@
 		8431486D2A67D030002C4025 /* CS193pSmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431486C2A67D030002C4025 /* CS193pSmallWidget.swift */; };
 		8431486F2A67D031002C4025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8431486E2A67D031002C4025 /* Assets.xcassets */; };
 		843148732A67D031002C4025 /* CS193pWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 843148662A67D030002C4025 /* CS193pWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8447D21C2A876B0C00773D5C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB842A613F1E0086FCDE /* ViewExtension.swift */; };
+		8447D21D2A876B0D00773D5C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB842A613F1E0086FCDE /* ViewExtension.swift */; };
 		845491462A5FA70700DEA382 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845491452A5FA70700DEA382 /* CircleImage.swift */; };
 		845491482A5FA92700DEA382 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845491472A5FA92700DEA382 /* MapView.swift */; };
 		8454914A2A5FC61F00DEA382 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845491492A5FC61F00DEA382 /* Landmark.swift */; };
@@ -38,6 +40,8 @@
 		84C2AB8C2A6156130086FCDE /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB8B2A6156130086FCDE /* BadgeSymbol.swift */; };
 		84C2AB8E2A615DDC0086FCDE /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB8D2A615DDC0086FCDE /* RotatedBadgeSymbol.swift */; };
 		84C2AB902A615E7F0086FCDE /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB8F2A615E7F0086FCDE /* Badge.swift */; };
+		84D1C6672A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */; };
+		84D1C6682A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */; };
 		84FF607A2A6951D8002508F9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60792A6951D8002508F9 /* Episode.swift */; };
 		84FF607B2A6951D8002508F9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60792A6951D8002508F9 /* Episode.swift */; };
 		84FF607D2A695412002508F9 /* PlayButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF607C2A695412002508F9 /* PlayButtonIcon.swift */; };
@@ -140,6 +144,7 @@
 		84C2AB8B2A6156130086FCDE /* BadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
 		84C2AB8D2A615DDC0086FCDE /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
 		84C2AB8F2A615E7F0086FCDE /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListWidget.swift; sourceTree = "<group>"; };
 		84FF60792A6951D8002508F9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		84FF607C2A695412002508F9 /* PlayButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButtonIcon.swift; sourceTree = "<group>"; };
 		84FF607F2A695E66002508F9 /* EpisodeStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeStore.swift; sourceTree = "<group>"; };
@@ -234,6 +239,7 @@
 				8431486A2A67D030002C4025 /* CS193pWidgetBundle.swift */,
 				8431486C2A67D030002C4025 /* CS193pSmallWidget.swift */,
 				84128D792A860E8D002E16F7 /* CaffeineTrackerWidget.swift */,
+				84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */,
 				8431486E2A67D031002C4025 /* Assets.xcassets */,
 				843148702A67D031002C4025 /* Info.plist */,
 				84FF607C2A695412002508F9 /* PlayButtonIcon.swift */,
@@ -551,7 +557,9 @@
 				8431486D2A67D030002C4025 /* CS193pSmallWidget.swift in Sources */,
 				84FF607B2A6951D8002508F9 /* Episode.swift in Sources */,
 				84FF607E2A695412002508F9 /* PlayButtonIcon.swift in Sources */,
+				84D1C6682A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */,
 				84FF608A2A6966B1002508F9 /* FormatterExtension.swift in Sources */,
+				8447D21C2A876B0C00773D5C /* ViewExtension.swift in Sources */,
 				84FF60882A6966B1002508F9 /* VideoURL.swift in Sources */,
 				8431486B2A67D030002C4025 /* CS193pWidgetBundle.swift in Sources */,
 				84FF60842A695E66002508F9 /* URLComponentsExtension.swift in Sources */,
@@ -563,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8447D21D2A876B0D00773D5C /* ViewExtension.swift in Sources */,
 				AF3A6CFC2A6B8224004A6C30 /* CS193pWidgetConfigurations.intentdefinition in Sources */,
 				AF3A6CEB2A6ADE11004A6C30 /* IntentHandler.swift in Sources */,
 			);
@@ -605,6 +614,7 @@
 				842A26B52A64E6F7007E276B /* Profile.swift in Sources */,
 				842A26BF2A6519B1007E276B /* PageViewController.swift in Sources */,
 				84C2AB8A2A614A410086FCDE /* BadgeBackground.swift in Sources */,
+				84D1C6672A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */,
 				8454914C2A5FC86700DEA382 /* Model.swift in Sources */,
 				AFA7D0172A61B19A000D6AC9 /* GraphCapsule.swift in Sources */,
 				AFA7D01A2A61B19A000D6AC9 /* HikeView.swift in Sources */,
@@ -647,7 +657,7 @@
 				INFOPLIST_FILE = CS193pWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CS193pWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,7 +691,7 @@
 				INFOPLIST_FILE = CS193pWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CS193pWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -713,7 +723,7 @@
 				INFOPLIST_FILE = CS193Intent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CS193Intent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -745,7 +755,7 @@
 				INFOPLIST_FILE = CS193Intent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CS193Intent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -899,7 +909,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -937,7 +947,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

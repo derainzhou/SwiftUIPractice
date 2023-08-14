@@ -5,6 +5,9 @@
 //  Created by WisidomCleanMaster on 2023/8/11.
 //
 
+///
+/// Button样式可交互小组件
+
 import WidgetKit
 import SwiftUI
 import AppIntents
@@ -17,7 +20,7 @@ struct Drink  {
 
 struct CaffeineLog {
     static let CaffeineLogWidgetKind: String = "CaffeineLogWidget"
-    static let Drinks = ["milk", "Green Tea", "Cappuccino", "Decaf", "Cocktail"]
+    static let Drinks = ["牛奶", "绿茶", "卡布奇诺", "脱因咖啡", "鸡尾酒"]
     
     let id: String
     let drink: Drink
@@ -44,11 +47,12 @@ struct LastDrinkView: View {
             Text(log.drink.name)
                 .bold()
             Text("\(log.date, format: Self.dateFormatStyle) · \(caffeineAmount)")
-                
         }
         .font(.caption)
         .id(log.id)
-        .transition(.move(edge: .bottom))
+        .transition(.asymmetric(
+            insertion: .move(edge: .leading),
+            removal: .scale.combined(with: .move(edge: .trailing))))
     }
 
     var caffeineAmount: String {
@@ -68,9 +72,11 @@ struct TotalCaffeineView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Total Caffeine")
+            Text("当前摄入咖啡因:")
                 .font(.caption)
-
+            
+            Spacer()
+            
             Text(totalCaffeine.formatted())
                 .font(.title)
                 .minimumScaleFactor(0.8)
@@ -84,44 +90,21 @@ struct TotalCaffeineView: View {
 }
 
 // MARK: - LogDrinkView
-
-/// 定义 Toggle 的样式
-struct ToDoToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        HStack {
-            Image(systemName: configuration.isOn ? "largecircle.fill.circle" : "circle")
-                .foregroundColor(configuration.isOn ? .blue : .gray)
-            if configuration.isOn {
-                configuration.label.strikethrough()
-            } else {
-                configuration.label
-            }
-        }
-    }
-}
-
-
 struct LogDrinkView: View {
     var body: some View {
         if #available(iOS 17.0, macOS 14.0, *) {
             let drink = Drink(name: "Espresso", caffeine: .init(value: 13.0, unit: .milligrams))
             
-            /// Toggle
-            let isOn = DrinksLogStore.shared.toggleValue
-            Toggle(isOn: isOn, intent: LogDrinkIntent(caffeine: drink.caffeine.value)) {
-                Text("Todo")
-            }
-            .toggleStyle(ToDoToggleStyle())
-            .animation(.spring(duration: 0.2), value: 2.0)
-            
-            /*
             // Button
             Button(intent: LogDrinkIntent(caffeine: drink.caffeine.value)) {
-                Label("Espresso", systemImage: "plus")
-                    .font(.caption)
+                Text("再来一杯")
+                    .font(.system(size: 14))
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
+                    .foregroundColor(.white)
+                    .background(.red)
+                    .cornerRadius(5)
             }
-            .tint(.gray)
-             */
         }
     }
 }
@@ -133,11 +116,11 @@ class DrinksLogStore {
     public static let shared = DrinksLogStore()
     
     var totalCaffeine: Double {
-        Self.sharedDefaults.double(forKey: Self.TotalCaffeineValueKey) ?? 0.0
+        Self.sharedDefaults.double(forKey: Self.TotalCaffeineValueKey)
     }
     
     var toggleValue: Bool {
-        return Self.sharedDefaults.bool(forKey: "widget.toggle.value") ?? true
+        return Self.sharedDefaults.bool(forKey: "widget.toggle.value")
     }
     
     func log(_ caffeine: Double) async {
@@ -149,7 +132,7 @@ class DrinksLogStore {
     
     func toggle() async {
         Task {
-            let isOn = Self.sharedDefaults.bool(forKey: "widget.toggle.value") ?? true
+            let isOn = Self.sharedDefaults.bool(forKey: "widget.toggle.value")
             Self.sharedDefaults.setValue(!isOn, forKey: "widget.toggle.value")
         }
     }
@@ -280,9 +263,7 @@ struct CaffeineLogWidgetEntryView: View {
             Spacer()
             
             HStack{
-                Spacer()
                 LogDrinkView()
-                Spacer()
             }
         })
         .caffeineWidgetBackground()
@@ -308,9 +289,16 @@ struct CaffeineTrackerWidget: Widget {
     }
     
     public var body: some WidgetConfiguration {
-        makeWidgetConfiguration()
-            .configurationDisplayName("Caffeine Tracker")
-            .description("See your total caffeine in one day.")
+        if #available(iOS 17.0, macOS 14.0, *) {
+            return makeWidgetConfiguration()
+                .configurationDisplayName("Caffeine Tracker")
+                .description("See your total caffeine in one day.")
+                .disfavoredLocations([.standBy], for: [.systemSmall])
+        } else {
+           return makeWidgetConfiguration()
+                .configurationDisplayName("Caffeine Tracker")
+                .description("See your total caffeine in one day.")
+        }
     }
 }
 
