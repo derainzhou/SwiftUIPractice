@@ -13,10 +13,14 @@ import SwiftUI
 import AppIntents
 
 // MARK: - TaskModel
-struct TaskModel: Identifiable {
+class TaskModel: Identifiable {
     let id: String = UUID().uuidString
     let taskTitle: String
     var isCompleted: Bool = false
+    
+    init(taskTitle: String) {
+        self.taskTitle = taskTitle
+    }
 }
 
 // MARK: - DrinksLogStore

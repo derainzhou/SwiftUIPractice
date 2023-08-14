@@ -15,9 +15,9 @@ struct ContentView: View {
         case list
     }
     var body: some View {
-        Text("This is placeholder text")
-            .font(.title)
-            .redacted(reason: [])
+//        Text("This is placeholder text")
+//            .font(.title)
+//            .redacted(reason: [])
         
         TabView(selection: $selection) {
             CategoryHome()
