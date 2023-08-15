@@ -11,8 +11,13 @@ import SwiftUI
 @main
 struct CS193pWidgetBundle: WidgetBundle {
     var body: some Widget {
+        // 动态小组件
         CS193pSmallWidget()
+        // Button样式可交互小组件
         CaffeineTrackerWidget()
+        // Toggle样式可交互小组件
         TodoListWidget()
+        // 可交互小组件发起网络请求
+        WWDCWidget()
     }
 }

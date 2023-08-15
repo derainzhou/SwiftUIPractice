@@ -5,6 +5,9 @@
 //  Created by WisidomCleanMaster on 2023/7/19.
 //
 
+///
+/// 动态小组件测试
+
 import WidgetKit
 import SwiftUI
 import Intents
@@ -145,8 +148,13 @@ struct CS193pSmallWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies(supportedFamilies)
     }
+    
+    private var supportedFamilies: [WidgetFamily] {
+        [.systemSmall, .systemMedium, .systemLarge]
+    }
+    
 }
 
 struct CS193pWidget_Previews: PreviewProvider {

@@ -56,9 +56,7 @@ struct LastDrinkView: View {
     }
 
     var caffeineAmount: String {
-        let text = log.drink.caffeine.formatted()
-        print(text)
-        return text
+        log.drink.caffeine.formatted()
     }
 
     static var dateFormatStyle = Date.FormatStyle(
@@ -162,22 +160,21 @@ struct LogDrinkIntent: AppIntent {
 }
 
 // MARK: - CaffeineIntentProvider
-struct CaffeineIntentProvider: IntentTimelineProvider {
-    typealias Intent = SmallWidgetConfigurationIntent
+struct CaffeineIntentProvider: TimelineProvider {
     
     public typealias Entry = CaffeineLogEntry
     
     
     func placeholder(in context: Context) -> CaffeineLogEntry {
-        return CaffeineLogEntry(date: Date(), totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog.defaultLog())
+        return CaffeineLogEntry(date: Date(), configuration: LogDrinkIntent(),  totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog.defaultLog())
     }
     
-    func getSnapshot(for configuration: SmallWidgetConfigurationIntent, in context: Context, completion: @escaping (CaffeineLogEntry) -> Void) {
-        let entry = CaffeineLogEntry(date: Date(), totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog.defaultLog())
+    func getSnapshot(in context: Context, completion: @escaping (CaffeineLogEntry) -> Void) {
+        let entry = CaffeineLogEntry(date: Date(), configuration: LogDrinkIntent(), totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog.defaultLog())
         completion(entry)
     }
     
-    func getTimeline(for configuration: SmallWidgetConfigurationIntent, in context: Context, completion: @escaping (Timeline<CaffeineLogEntry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<CaffeineLogEntry>) -> Void) {
         let oneMinute: TimeInterval = 3
         var currentDate = Date()
         var entries: [CaffeineLogEntry] = []
@@ -189,7 +186,7 @@ struct CaffeineIntentProvider: IntentTimelineProvider {
             let date = Date() + Double(60 * 60 * i)
             let caffeineLog = CaffeineLog(drink: drink, caffeine: 5.0 * Double(i) + 10, date: date)
             totalCoffeine +=  5.0 * Double(i) + 10;
-            let entry = CaffeineLogEntry(date: currentDate, totalCaffeine: .init(value: totalCoffeine, unit: .milligrams), log: caffeineLog)
+            let entry = CaffeineLogEntry(date: currentDate, configuration: LogDrinkIntent(), totalCaffeine: .init(value: totalCoffeine, unit: .milligrams), log: caffeineLog)
             entries.append(entry)
         }
         
@@ -203,32 +200,33 @@ struct CaffeineIntentProvider: IntentTimelineProvider {
 
 struct CaffeineLogEntry: TimelineEntry {
     let date: Date
+    let configuration: LogDrinkIntent
     let totalCaffeine: Measurement<UnitMass>
     var log: CaffeineLog?
     
     static var log1: CaffeineLogEntry {
         let date = Date().addingTimeInterval(60 * 60 * 1)
-        return CaffeineLogEntry(date: date, totalCaffeine: .init(value: 63, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[0], caffeine: 63, date: date))
+        return CaffeineLogEntry(date: date, configuration: LogDrinkIntent(), totalCaffeine: .init(value: 63, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[0], caffeine: 63, date: date))
     }
     
     static var log2: CaffeineLogEntry {
         let date = Date().addingTimeInterval(60 * 60 * 2)
-        return CaffeineLogEntry(date: date, totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[1], caffeine: 100, date: date))
+        return CaffeineLogEntry(date: date, configuration: LogDrinkIntent(), totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[1], caffeine: 100, date: date))
     }
     
     static var log3: CaffeineLogEntry {
         let date = Date().addingTimeInterval(60 * 60 * 3)
-        return CaffeineLogEntry(date: date, totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[2], caffeine: 200, date: date))
+        return CaffeineLogEntry(date: date, configuration: LogDrinkIntent(), totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[2], caffeine: 200, date: date))
     }
     
     static var log4: CaffeineLogEntry {
         let date = Date().addingTimeInterval(60 * 60 * 4)
-        return CaffeineLogEntry(date: date, totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[3], caffeine: 8, date: date))
+        return CaffeineLogEntry(date: date, configuration: LogDrinkIntent(), totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[3], caffeine: 8, date: date))
     }
     
     static var log5: CaffeineLogEntry {
         let date = Date().addingTimeInterval(60 * 60 * 5)
-        return CaffeineLogEntry(date: date, totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[4], caffeine: 13, date: date))
+        return CaffeineLogEntry(date: date, configuration: LogDrinkIntent(), totalCaffeine: .init(value: 163, unit: .milligrams), log: CaffeineLog(drink: CaffeineLog.Drinks[4], caffeine: 13, date: date))
     }
 }
 
@@ -273,8 +271,7 @@ struct CaffeineLogWidgetEntryView: View {
 struct CaffeineTrackerWidget: Widget {
     
     func makeWidgetConfiguration() -> some WidgetConfiguration {
-        return IntentConfiguration(kind: CaffeineLog.CaffeineLogWidgetKind,
-                                   intent: SmallWidgetConfigurationIntent.self,
+        return StaticConfiguration(kind: CaffeineLog.CaffeineLogWidgetKind,
                                    provider: CaffeineIntentProvider()) { entry in
             CaffeineLogWidgetEntryView(entry: entry)
         }
@@ -284,8 +281,11 @@ struct CaffeineTrackerWidget: Widget {
     
     private var supportedFamilies: [WidgetFamily] {
         [.accessoryCircular,
-         .accessoryRectangular, .accessoryInline,
-         .systemSmall, .systemMedium, .systemLarge]
+         .accessoryRectangular,
+         .accessoryInline,
+         .systemSmall,
+         .systemMedium,
+         .systemLarge]
     }
     
     public var body: some WidgetConfiguration {
