@@ -43,6 +43,7 @@
 		84D1C6672A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */; };
 		84D1C6682A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */; };
 		84D1C66A2A8B64F4005E3EFF /* WWDCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6692A8B64F4005E3EFF /* WWDCWidget.swift */; };
+		84D1C66C2A8B990F005E3EFF /* PhotoWallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C66B2A8B990F005E3EFF /* PhotoWallWidget.swift */; };
 		84FF607A2A6951D8002508F9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60792A6951D8002508F9 /* Episode.swift */; };
 		84FF607B2A6951D8002508F9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60792A6951D8002508F9 /* Episode.swift */; };
 		84FF607D2A695412002508F9 /* PlayButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF607C2A695412002508F9 /* PlayButtonIcon.swift */; };
@@ -147,6 +148,7 @@
 		84C2AB8F2A615E7F0086FCDE /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListWidget.swift; sourceTree = "<group>"; };
 		84D1C6692A8B64F4005E3EFF /* WWDCWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCWidget.swift; sourceTree = "<group>"; };
+		84D1C66B2A8B990F005E3EFF /* PhotoWallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallWidget.swift; sourceTree = "<group>"; };
 		84FF60792A6951D8002508F9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		84FF607C2A695412002508F9 /* PlayButtonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButtonIcon.swift; sourceTree = "<group>"; };
 		84FF607F2A695E66002508F9 /* EpisodeStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeStore.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				84128D792A860E8D002E16F7 /* CaffeineTrackerWidget.swift */,
 				84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */,
 				84D1C6692A8B64F4005E3EFF /* WWDCWidget.swift */,
+				84D1C66B2A8B990F005E3EFF /* PhotoWallWidget.swift */,
 				8431486E2A67D031002C4025 /* Assets.xcassets */,
 				843148702A67D031002C4025 /* Info.plist */,
 				84FF607C2A695412002508F9 /* PlayButtonIcon.swift */,
@@ -561,6 +564,7 @@
 				8431486D2A67D030002C4025 /* CS193pSmallWidget.swift in Sources */,
 				84FF607B2A6951D8002508F9 /* Episode.swift in Sources */,
 				84FF607E2A695412002508F9 /* PlayButtonIcon.swift in Sources */,
+				84D1C66C2A8B990F005E3EFF /* PhotoWallWidget.swift in Sources */,
 				84D1C6682A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */,
 				84FF608A2A6966B1002508F9 /* FormatterExtension.swift in Sources */,
 				8447D21C2A876B0C00773D5C /* ViewExtension.swift in Sources */,
