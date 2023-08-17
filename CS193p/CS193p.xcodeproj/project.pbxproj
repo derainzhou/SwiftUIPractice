@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84128D7A2A860E8E002E16F7 /* CaffeineTrackerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84128D792A860E8D002E16F7 /* CaffeineTrackerWidget.swift */; };
 		842A26B52A64E6F7007E276B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A26B42A64E6F7007E276B /* Profile.swift */; };
 		842A26B72A64E7C9007E276B /* ProfilHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A26B62A64E7C9007E276B /* ProfilHost.swift */; };
 		842A26B92A64E861007E276B /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842A26B82A64E861007E276B /* ProfileSummary.swift */; };
@@ -31,6 +30,8 @@
 		8454914C2A5FC86700DEA382 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454914B2A5FC86700DEA382 /* Model.swift */; };
 		845491692A5FCA9400DEA382 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8454915C2A5FCA9400DEA382 /* landmarkData.json */; };
 		8454916B2A5FCB2A00DEA382 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454916A2A5FCB2A00DEA382 /* LandmarkRow.swift */; };
+		845FC73A2A8CB4FC00509383 /* PhotoWallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C66B2A8B990F005E3EFF /* PhotoWallWidget.swift */; };
+		845FC73C2A8E072F00509383 /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FC73B2A8E072F00509383 /* UITest.swift */; };
 		84C2AB7C2A60F84F0086FCDE /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB7B2A60F84F0086FCDE /* LandmarkList.swift */; };
 		84C2AB7E2A60FD4F0086FCDE /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB7D2A60FD4F0086FCDE /* LandmarkDetail.swift */; };
 		84C2AB802A612B7D0086FCDE /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB7F2A612B7D0086FCDE /* FavoriteButton.swift */; };
@@ -40,10 +41,6 @@
 		84C2AB8C2A6156130086FCDE /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB8B2A6156130086FCDE /* BadgeSymbol.swift */; };
 		84C2AB8E2A615DDC0086FCDE /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB8D2A615DDC0086FCDE /* RotatedBadgeSymbol.swift */; };
 		84C2AB902A615E7F0086FCDE /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2AB8F2A615E7F0086FCDE /* Badge.swift */; };
-		84D1C6672A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */; };
-		84D1C6682A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */; };
-		84D1C66A2A8B64F4005E3EFF /* WWDCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6692A8B64F4005E3EFF /* WWDCWidget.swift */; };
-		84D1C66C2A8B990F005E3EFF /* PhotoWallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C66B2A8B990F005E3EFF /* PhotoWallWidget.swift */; };
 		84FF607A2A6951D8002508F9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60792A6951D8002508F9 /* Episode.swift */; };
 		84FF607B2A6951D8002508F9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60792A6951D8002508F9 /* Episode.swift */; };
 		84FF607D2A695412002508F9 /* PlayButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF607C2A695412002508F9 /* PlayButtonIcon.swift */; };
@@ -135,6 +132,7 @@
 		8454914B2A5FC86700DEA382 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8454915C2A5FCA9400DEA382 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		8454916A2A5FCB2A00DEA382 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
+		845FC73B2A8E072F00509383 /* UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 		84A8EB7B2A67BB3900C1D7E9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		84A8EB7D2A67BB3900C1D7E9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		84C2AB7B2A60F84F0086FCDE /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
@@ -277,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				AFB16FB029B7585400C54CDF /* CS193pApp.swift */,
+				845FC73B2A8E072F00509383 /* UITest.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -558,19 +557,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D1C66A2A8B64F4005E3EFF /* WWDCWidget.swift in Sources */,
 				84FF60822A695E66002508F9 /* EpisodeStore.swift in Sources */,
-				84128D7A2A860E8E002E16F7 /* CaffeineTrackerWidget.swift in Sources */,
 				8431486D2A67D030002C4025 /* CS193pSmallWidget.swift in Sources */,
 				84FF607B2A6951D8002508F9 /* Episode.swift in Sources */,
 				84FF607E2A695412002508F9 /* PlayButtonIcon.swift in Sources */,
-				84D1C66C2A8B990F005E3EFF /* PhotoWallWidget.swift in Sources */,
-				84D1C6682A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */,
 				84FF608A2A6966B1002508F9 /* FormatterExtension.swift in Sources */,
 				8447D21C2A876B0C00773D5C /* ViewExtension.swift in Sources */,
 				84FF60882A6966B1002508F9 /* VideoURL.swift in Sources */,
 				8431486B2A67D030002C4025 /* CS193pWidgetBundle.swift in Sources */,
 				84FF60842A695E66002508F9 /* URLComponentsExtension.swift in Sources */,
+				845FC73A2A8CB4FC00509383 /* PhotoWallWidget.swift in Sources */,
 				AF3A6CFB2A6B8224004A6C30 /* CS193pWidgetConfigurations.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +590,7 @@
 				84C2AB872A6149C80086FCDE /* HexagonParameters.swift in Sources */,
 				84FF607D2A695412002508F9 /* PlayButtonIcon.swift in Sources */,
 				AFB16FB329B7585400C54CDF /* ContentView.swift in Sources */,
+				845FC73C2A8E072F00509383 /* UITest.swift in Sources */,
 				AFB16FB129B7585400C54CDF /* CS193pApp.swift in Sources */,
 				AF635CC22A643C5A0055D456 /* CategoryHome.swift in Sources */,
 				84FF60832A695E66002508F9 /* URLComponentsExtension.swift in Sources */,
@@ -622,7 +619,6 @@
 				842A26B52A64E6F7007E276B /* Profile.swift in Sources */,
 				842A26BF2A6519B1007E276B /* PageViewController.swift in Sources */,
 				84C2AB8A2A614A410086FCDE /* BadgeBackground.swift in Sources */,
-				84D1C6672A8A2D4F005E3EFF /* TodoListWidget.swift in Sources */,
 				8454914C2A5FC86700DEA382 /* Model.swift in Sources */,
 				AFA7D0172A61B19A000D6AC9 /* GraphCapsule.swift in Sources */,
 				AFA7D01A2A61B19A000D6AC9 /* HikeView.swift in Sources */,

@@ -67,20 +67,64 @@ struct PhotoWallWidgetEntryView: View {
     var entry: PhotoWallEntry
 
     var body: some View {
+        // 1.0 初始旋转矩阵(假设)
+        let size = CGSize(width: 120, height: 120)
+        // 10s内转动360度, 单次角度36
+        let radians = CGFloat(Angle.degrees(30).radians)
+//        let rMatrix = CGAffineTransform(translationX: size.width / 2.0, y: size.height / 2.0)
+//            .rotated(by: radians)
+//            .translatedBy(x: -size.width / 2.0, y: -size.height / 2.0)
+        
+        let rMatrix = CGAffineTransform(rotationAngle: radians)
+        // let rMatrix = CGAffineTransformMakeRotation(radians)
+        
+        // 2.0 目标矩阵, 每次向右平移10px
+        let targetMatrix = CGAffineTransform(a: 0, b: -1, c: 1, d: 0, tx: 0, ty: 0)
+        
+        // 3.0 转换矩阵 = rMatrix^-1 * targetMatrix
+        // let transform = rMatrix.inverted().concatenating(targetMatrix)
+    
         return VStack(alignment: .leading) {
             HStack {
                 Spacer()
                 Image(entry.imgName, bundle: nil)
                     .resizable()
-                    .scaledToFill()
-                    ._clockHandRotationEffect(.secondHand, in: .current, anchor: .center)
-                    .modifier(RotationEffect(angle: 90))
-                   // .animation(.default)
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .background(Color.yellow)
+                    ._clockHandRotationEffect(.custom(10), in: .current, anchor: .center)
+                    .transformEffect(targetMatrix)
+                    
+                /*
+                 ._clockHandRotationEffect(.custom(10), in: .current, anchor: .center)
+                 .scaleEffect(x:1, y: 2, anchor: .trailing)
+                 */
+                
                 Spacer()
             }
         }
         .containerBackground(.fill.tertiary, for: .widget)
     }
+
+        
+        /*
+        let size = CGSize(width: 150, height: 150)
+        let radians = CGFloat(Angle.degrees(-6.0).radians)
+        let transform = CGAffineTransform(translationX: size.width / 2.0, y: size.height / 2.0)
+        .rotated(by: radians)
+        .translatedBy(x: -size.width / 2.0, y: -size.height / 2.0)
+        
+        return VStack(alignment: .leading) {
+            HStack {
+                Spacer()
+                Text("测试文本测试文本!")
+                    .background(.red)
+                    ._clockHandRotationEffect(.secondHand, in: .current, anchor: .center)
+                    .scaleEffect(CGSize(width: 2.0, height: 1.0))
+                Spacer()
+            }
+        }
+        .containerBackground(.fill.tertiary, for: .widget)
+    }*/
 }
 
 struct PhotoWallWidget: Widget {
@@ -92,7 +136,7 @@ struct PhotoWallWidget: Widget {
     }
 }
 
-#Preview(as: .systemMedium, widget: {
+#Preview(as: .systemLarge, widget: {
     PhotoWallWidget()
 }, timeline: {
     PhotoWallEntry(imgName: "IMG_6987")

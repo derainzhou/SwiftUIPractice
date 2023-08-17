@@ -87,6 +87,10 @@ struct SmallWidgetSimpleEntry: TimelineEntry {
 extension View {
      func widgetBackground() -> some View {
          let color = Color(red: 255, green: 247, blue: 227)
+         return background {
+             Color("item-bkgd")
+         }
+         /*
          if #available(iOSApplicationExtension 17.0, *) {
              return containerBackground(for: .widget) {
                  Color("item-bkgd")
@@ -96,6 +100,7 @@ extension View {
                  Color("item-bkgd")
              }
          }
+          */
     }
 }
 
@@ -106,6 +111,20 @@ struct CS193pWidgetSmallEntryView : View {
     var entry: CS193pSmallWidgetProvider.Entry
 
     var body: some View {
+        return VStack(alignment: .leading) {
+            HStack {
+                Spacer()
+                Image("charleyrivers", bundle: nil)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80, height: 80)
+                    ._clockHandRotationEffect(.secondHand, in: .current, anchor: .center)
+                    .scaleEffect(CGSize(width: 2.0, height: 2.0))
+                
+                Spacer()
+            }
+        }
+        /*
         VStack(alignment: .leading, spacing: 6) {
             HStack {
                 PlayButtonIcon(width: 50, height: 50, radius: 10)
@@ -137,6 +156,7 @@ struct CS193pWidgetSmallEntryView : View {
         .font(.footnote)
         .foregroundColor(Color(.systemGray))
         .widgetURL(URL(string: "CS193p://\(entry.episode.id)"))
+         */
     }
 }
 struct CS193pSmallWidget: Widget {

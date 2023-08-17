@@ -23,7 +23,6 @@ struct FavoriteButton: View {
                 .labelStyle(.iconOnly)
                 .foregroundColor(isSet ? .yellow : .black)
         }
-
     }
 }
 

@@ -11,6 +11,7 @@ import SwiftUI
 @main
 struct CS193pWidgetBundle: WidgetBundle {
     var body: some Widget {
+       // CS193pSmallWidget()
         /*
         // 动态小组件
         CS193pSmallWidget()
