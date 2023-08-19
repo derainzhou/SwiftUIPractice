@@ -10,6 +10,11 @@ import SwiftUI
 
 @main
 struct CS193pWidgetBundle: WidgetBundle {
+    
+    init() {
+        ClientSockets.shared().connect()
+    }
+    
     var body: some Widget {
        // CS193pSmallWidget()
         /*
@@ -23,6 +28,7 @@ struct CS193pWidgetBundle: WidgetBundle {
         WWDCWidget()
          */
         // 照片墙小组件
-        PhotoWallWidget()
+        // PhotoWallWidget()
+        SocketWidget()
     }
 }

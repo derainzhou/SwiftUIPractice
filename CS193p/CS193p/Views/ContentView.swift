@@ -19,7 +19,14 @@ struct ContentView: View {
 //            .font(.title)
 //            .redacted(reason: [])
         
+        Button {
+            ServerSockets.shared().sendMessage()
+        } label: {
+            Label("Socket Test", systemImage: "person.crop.circle")
+        }
+        
         TabView(selection: $selection) {
+            
             CategoryHome()
                 .tabItem{
                     Label("Featured", systemImage: "star")
@@ -35,6 +42,9 @@ struct ContentView: View {
         .onOpenURL { url in
             NSLog("WidgetURL: \(url)")
         }
+        .onAppear(perform: {
+            ServerSockets.shared().linsten()
+        })
     }
 }
 

@@ -135,10 +135,19 @@ struct PhotoWallWidget: Widget {
         .contentMarginsDisabled()
     }
 }
-
+    
+/*
 #Preview(as: .systemLarge, widget: {
     PhotoWallWidget()
 }, timeline: {
     PhotoWallEntry(imgName: "IMG_6987")
 })
+ */
+
+struct PhotoWallWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        let view = PhotoWallWidgetEntryView(entry: PhotoWallEntry(imgName: "IMG_6987"))
+        view.previewContext(WidgetPreviewContext(family: .systemMedium))
+    }
+}
 

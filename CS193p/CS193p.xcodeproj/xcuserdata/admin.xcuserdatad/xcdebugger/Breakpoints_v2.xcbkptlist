@@ -3,4 +3,102 @@
    uuid = "0CCBFB6C-D1CE-4B78-95E1-971B083CA0B6"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD9C651E-A5EF-4661-ABFB-FE5CD6D568BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS193p/Utils/ClientSockets.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-connect"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD9C651E-A5EF-4661-ABFB-FE5CD6D568BE - aa7faf0d44d00815"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ClientSockets connect]"
+                  moduleName = "CS193p"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/ClientSockets.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "364">
+               </Location>
+               <Location
+                  uuid = "CD9C651E-A5EF-4661-ABFB-FE5CD6D568BE - 7a93d792287ae725"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ClientSockets connect]"
+                  moduleName = "CS193pWidgetExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/ClientSockets.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "364">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB0C8B4C-7A3D-4F0E-9804-FD69EAA61D50"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS193p/Utils/ClientSockets.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-connect"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CB0C8B4C-7A3D-4F0E-9804-FD69EAA61D50 - 7a93d792287ae80e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ClientSockets connect]"
+                  moduleName = "CS193pWidgetExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/ClientSockets.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "CB0C8B4C-7A3D-4F0E-9804-FD69EAA61D50 - aa7faf0d44d0073e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ClientSockets connect]"
+                  moduleName = "CS193p"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/ClientSockets.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "296">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
