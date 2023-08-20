@@ -26,8 +26,14 @@ struct SocketWidgetProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<SocketWidgetEntry>) -> Void) {
-        let entry = SocketWidgetEntry(title: UUID().uuidString)
-        let timeline = Timeline(entries: [entry], policy: .never)
+        let currentDate = Date()
+        var entries: [SocketWidgetEntry] = []
+        for index in 0...60 {
+            let entryDate = Calendar.current.date(byAdding: .second, value: index * 5, to: currentDate)!
+            let entry = SocketWidgetEntry(date: entryDate, title: UUID().uuidString)
+            entries.append(entry)
+        }
+        let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
@@ -36,8 +42,13 @@ struct SocketWidgetProvider: TimelineProvider {
 // MARK: - CaffeineTrackerWidget
 
 struct SocketWidgetEntry: TimelineEntry {
-    let date: Date = Date()
+    let date: Date
     let title: String
+    
+    init(date: Date = Date(), title: String) {
+        self.title = title
+        self.date = date
+    }
 }
 
 struct SocketWidgetEntryView: View {

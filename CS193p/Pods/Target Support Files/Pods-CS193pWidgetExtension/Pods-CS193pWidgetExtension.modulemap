@@ -1,0 +1,6 @@
+framework module Pods_CS193pWidgetExtension {
+  umbrella header "Pods-CS193pWidgetExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_CS193Intent {
+  umbrella header "Pods-CS193Intent-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -20,7 +20,7 @@ struct ContentView: View {
 //            .redacted(reason: [])
         
         Button {
-            ServerSockets.shared().sendMessage()
+            ServerSockets.shared.send("Hello Client")
         } label: {
             Label("Socket Test", systemImage: "person.crop.circle")
         }
@@ -43,7 +43,7 @@ struct ContentView: View {
             NSLog("WidgetURL: \(url)")
         }
         .onAppear(perform: {
-            ServerSockets.shared().linsten()
+            ServerSockets.shared.listen()
         })
     }
 }

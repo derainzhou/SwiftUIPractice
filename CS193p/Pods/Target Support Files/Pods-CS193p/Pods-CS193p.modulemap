@@ -1,0 +1,6 @@
+framework module Pods_CS193p {
+  umbrella header "Pods-CS193p-umbrella.h"
+
+  export *
+  module * { export * }
+}

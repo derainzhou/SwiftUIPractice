@@ -12,7 +12,8 @@ import SwiftUI
 struct CS193pWidgetBundle: WidgetBundle {
     
     init() {
-        ClientSockets.shared().connect()
+        ClientSockets.shared.delegate = self
+        ClientSockets.shared.connect()
     }
     
     var body: some Widget {
@@ -30,5 +31,11 @@ struct CS193pWidgetBundle: WidgetBundle {
         // 照片墙小组件
         // PhotoWallWidget()
         SocketWidget()
+    }
+}
+
+extension CS193pWidgetBundle: ClientSocketsDelegate {
+    func socketsDidReceive(_ message: String) {
+        WidgetCenter.shared.reloadTimelines(ofKind: "SocketWidget")
     }
 }

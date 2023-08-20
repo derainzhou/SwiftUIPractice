@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B7BE96DE-5078-4858-B88C-DDD86AC8B503"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9938BA7B-0620-4C37-B670-2549A1B7E2EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS193p/Utils/Sockets.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "socket(_:didConnectToHost:port:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9938BA7B-0620-4C37-B670-2549A1B7E2EF - b571fa57b32f49c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CS193p.ClientSockets.socket(_: __C.GCDAsyncSocket, didConnectToHost: Swift.String, port: Swift.UInt16) -&gt; ()"
+                  moduleName = "CS193p"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/derainzhou/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/Sockets.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "9938BA7B-0620-4C37-B670-2549A1B7E2EF - 7bbd15896185daa9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CS193pWidgetExtension.ClientSockets.socket(_: __C.GCDAsyncSocket, didConnectToHost: Swift.String, port: Swift.UInt16) -&gt; ()"
+                  moduleName = "CS193pWidgetExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/derainzhou/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/Sockets.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C798D13-C712-4819-8F14-1309DBEF6C21"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS193p/Utils/Sockets.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "socketDidDisconnect(_:withError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7C798D13-C712-4819-8F14-1309DBEF6C21 - 427ce675672f644b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CS193p.ClientSockets.socketDidDisconnect(_: __C.GCDAsyncSocket, withError: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "CS193p"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/derainzhou/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/Sockets.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "7C798D13-C712-4819-8F14-1309DBEF6C21 - 5bcc9e8a619a9130"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CS193pWidgetExtension.ClientSockets.socketDidDisconnect(_: __C.GCDAsyncSocket, withError: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "CS193pWidgetExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/derainzhou/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/Sockets.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FE9DA5F-7031-4D25-80DE-41AEABFC888B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS193p/Utils/Sockets.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "socket(_:didRead:withTag:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8FE9DA5F-7031-4D25-80DE-41AEABFC888B - 5b7b25b8a2ade856"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CS193p.ClientSockets.socket(_: __C.GCDAsyncSocket, didRead: Foundation.Data, withTag: Swift.Int) -&gt; ()"
+                  moduleName = "CS193p"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/derainzhou/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/Sockets.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "748">
+               </Location>
+               <Location
+                  uuid = "8FE9DA5F-7031-4D25-80DE-41AEABFC888B - c829c851bef9862a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CS193pWidgetExtension.ClientSockets.socket(_: __C.GCDAsyncSocket, didRead: Foundation.Data, withTag: Swift.Int) -&gt; ()"
+                  moduleName = "CS193pWidgetExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/derainzhou/Desktop/DerainStudy/GitHubRepository/SwiftUIPractice/CS193p/CS193p/Utils/Sockets.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "748">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
