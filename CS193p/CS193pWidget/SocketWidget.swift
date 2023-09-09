@@ -80,7 +80,7 @@ struct SocketWidget: Widget {
 })
  */
 
-struct WWDCWidget_Previews: PreviewProvider {
+struct SocketWidget_Previews: PreviewProvider {
     static var previews: some View {
         let view = SocketWidgetEntryView(entry: SocketWidgetEntry(title: "Hello World"))
         

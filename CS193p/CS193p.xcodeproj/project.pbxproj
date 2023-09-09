@@ -56,6 +56,8 @@
 		84FF60892A6966B1002508F9 /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60862A6966B1002508F9 /* FormatterExtension.swift */; };
 		84FF608A2A6966B1002508F9 /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF60862A6966B1002508F9 /* FormatterExtension.swift */; };
 		888EEF68516BE0EC6126277D /* Pods_CS193pWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30534FC74AF1F67F22735D70 /* Pods_CS193pWidgetExtension.framework */; };
+		AF2B18142AACAD5100652F99 /* TodoListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */; };
+		AF2B18152AACAD5E00652F99 /* CaffeineTrackerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84128D792A860E8D002E16F7 /* CaffeineTrackerWidget.swift */; };
 		AF3A6CE82A6ADE11004A6C30 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F73EF2A6A8ED40009A7BC /* Intents.framework */; };
 		AF3A6CEB2A6ADE11004A6C30 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6CEA2A6ADE11004A6C30 /* IntentHandler.swift */; };
 		AF3A6CEF2A6ADE11004A6C30 /* CS193Intent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AF3A6CE72A6ADE11004A6C30 /* CS193Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -280,12 +282,12 @@
 		843148692A67D030002C4025 /* CS193pWidget */ = {
 			isa = PBXGroup;
 			children = (
+				8431486A2A67D030002C4025 /* CS193pWidgetBundle.swift */,
 				84FF60862A6966B1002508F9 /* FormatterExtension.swift */,
 				84FF60852A6966B1002508F9 /* VideoURL.swift */,
 				84FF607F2A695E66002508F9 /* EpisodeStore.swift */,
 				84FF60802A695E66002508F9 /* URLComponentsExtension.swift */,
 				84FF60792A6951D8002508F9 /* Episode.swift */,
-				8431486A2A67D030002C4025 /* CS193pWidgetBundle.swift */,
 				8431486C2A67D030002C4025 /* CS193pSmallWidget.swift */,
 				84128D792A860E8D002E16F7 /* CaffeineTrackerWidget.swift */,
 				84D1C6602A8A2324005E3EFF /* TodoListWidget.swift */,
@@ -729,9 +731,11 @@
 				84FF607E2A695412002508F9 /* PlayButtonIcon.swift in Sources */,
 				84FF608A2A6966B1002508F9 /* FormatterExtension.swift in Sources */,
 				8447D21C2A876B0C00773D5C /* ViewExtension.swift in Sources */,
+				AF2B18142AACAD5100652F99 /* TodoListWidget.swift in Sources */,
 				84DF4EE62A90C42D00D295C1 /* SocketWidget.swift in Sources */,
 				84FF60882A6966B1002508F9 /* VideoURL.swift in Sources */,
 				8431486B2A67D030002C4025 /* CS193pWidgetBundle.swift in Sources */,
+				AF2B18152AACAD5E00652F99 /* CaffeineTrackerWidget.swift in Sources */,
 				84FF60842A695E66002508F9 /* URLComponentsExtension.swift in Sources */,
 				845FC73A2A8CB4FC00509383 /* PhotoWallWidget.swift in Sources */,
 				AF3A6CFB2A6B8224004A6C30 /* CS193pWidgetConfigurations.intentdefinition in Sources */,

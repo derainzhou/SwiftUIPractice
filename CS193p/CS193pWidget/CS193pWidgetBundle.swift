@@ -27,10 +27,16 @@ struct CS193pWidgetBundle: WidgetBundle {
         TodoListWidget()
         // 可交互小组件发起网络请求
         WWDCWidget()
+         
+         // 照片墙小组件
+         // PhotoWallWidget()
+         
+         // 长链接小组件
+         // SocketWidget()
          */
-        // 照片墙小组件
-        // PhotoWallWidget()
-        SocketWidget()
+        
+        // Button样式可交互小组件
+        CaffeineTrackerWidget()
     }
 }
 
