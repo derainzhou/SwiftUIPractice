@@ -37,7 +37,7 @@ extension FileManager {
   static func sharedContainerURL() -> URL {
     return FileManager.default.containerURL(
       forSecurityApplicationGroupIdentifier:
-        "group.tp.tpcleanerpro.pro"
+        "group.test.tp.tpcleanerpro.pro"
     )!
   }
 }

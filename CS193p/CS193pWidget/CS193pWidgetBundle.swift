@@ -12,8 +12,12 @@ import SwiftUI
 struct CS193pWidgetBundle: WidgetBundle {
     
     init() {
+        
+        // socket小组件测试
+        /*
         ClientSockets.shared.delegate = self
         ClientSockets.shared.connect()
+         */
     }
     
     var body: some Widget {
@@ -35,8 +39,9 @@ struct CS193pWidgetBundle: WidgetBundle {
          // SocketWidget()
          */
         
-        // Button样式可交互小组件
-        CaffeineTrackerWidget()
+        // Panel小组件
+        MomentWidget()
+//        CaffeineTrackerWidget()
     }
 }
 
