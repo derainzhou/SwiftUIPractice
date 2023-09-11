@@ -30,16 +30,16 @@ struct CS193pApp: App {
                 .environmentObject(ModelData())
                 .debugPrint(self)
         }
-        .onChange(of: scenePhase) { newScenePhase in
+        .onChange(of: scenePhase) { oldValue, newScenePhase in
             switch newScenePhase {
             case .active:
-                BackgroundTask.shared.willEnterForeground()
+                print("应用激活")
             case .inactive:
-              print("应用休眠")
+                print("应用休眠")
             case .background:
-                BackgroundTask.shared.didEnterBackground()
+                print("应用进入后台")
             @unknown default:
-              print("default")
+                print("default")
             }
         }
     }
