@@ -213,7 +213,7 @@ struct PhotoWallWidget: Widget {
         }
         .configurationDisplayName("照片墙")
         .description("显示最新照片")
-        .supportedFamilies([.systemLarge]) // 支持的尺寸
+        .supportedFamilies([.systemLarge, .systemMedium, .systemSmall]) // 支持的尺寸
         .contentMarginsDisabled()
     }
 }
