@@ -13,12 +13,9 @@ struct ContentView: View {
     enum Tab {
         case featured
         case list
+        case photo
     }
     var body: some View {
-//        Text("This is placeholder text")
-//            .font(.title)
-//            .redacted(reason: [])
-        
         Button {
             ServerSockets.shared.send("Hello Client")
         } label: {
@@ -26,7 +23,6 @@ struct ContentView: View {
         }
         
         TabView(selection: $selection) {
-            
             CategoryHome()
                 .tabItem{
                     Label("Featured", systemImage: "star")
@@ -38,6 +34,11 @@ struct ContentView: View {
                     Label("List", systemImage: "list.bullet")
                 }
                 .tag(Tab.list)
+            
+            PhotoLibraryView()
+                .tabItem { Label("Photo", systemImage: "list.bullet") }
+                .tag(Tab.photo)
+                
         }
         .onOpenURL { url in
             NSLog("WidgetURL: \(url)")

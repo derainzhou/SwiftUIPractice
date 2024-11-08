@@ -70,6 +70,9 @@
 		AF4FED522A91EEBB00F0BF8C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FED512A91EEBB00F0BF8C /* AudioPlayer.swift */; };
 		AF4FED562A91F85B00F0BF8C /* Sockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FED552A91F85B00F0BF8C /* Sockets.swift */; };
 		AF4FED572A91F85B00F0BF8C /* Sockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FED552A91F85B00F0BF8C /* Sockets.swift */; };
+		AF570F172CDCED050072E1DF /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF570F162CDCED050072E1DF /* PhotoManager.swift */; };
+		AF570F192CDCED230072E1DF /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF570F182CDCED230072E1DF /* PhotoLibraryView.swift */; };
+		AF570F1A2CDCF2E80072E1DF /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF570F162CDCED050072E1DF /* PhotoManager.swift */; };
 		AF635CC22A643C5A0055D456 /* CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF635CC12A643C5A0055D456 /* CategoryHome.swift */; };
 		AFA7D00F2A61AFAD000D6AC9 /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = AFA7D00E2A61AFAD000D6AC9 /* hikeData.json */; };
 		AFA7D0112A61AFC7000D6AC9 /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7D0102A61AFC7000D6AC9 /* Hike.swift */; };
@@ -190,6 +193,8 @@
 		AF3E34A02A64426700C89AF7 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		AF4FED512A91EEBB00F0BF8C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		AF4FED552A91F85B00F0BF8C /* Sockets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sockets.swift; sourceTree = "<group>"; };
+		AF570F162CDCED050072E1DF /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		AF570F182CDCED230072E1DF /* PhotoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryView.swift; sourceTree = "<group>"; };
 		AF635CC12A643C5A0055D456 /* CategoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHome.swift; sourceTree = "<group>"; };
 		AFA7D00E2A61AFAD000D6AC9 /* hikeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hikeData.json; sourceTree = "<group>"; };
 		AFA7D0102A61AFC7000D6AC9 /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
@@ -360,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				AFB16FB229B7585400C54CDF /* ContentView.swift */,
+				AF570F152CDCECE00072E1DF /* PhotoView */,
 				842A26C52A652B08007E276B /* PageView */,
 				842A26C02A651C47007E276B /* Feature */,
 				842A26B32A64E6D6007E276B /* Profile */,
@@ -378,6 +384,7 @@
 				845491452A5FA70700DEA382 /* CircleImage.swift */,
 				845491472A5FA92700DEA382 /* MapView.swift */,
 				84C2AB7F2A612B7D0086FCDE /* FavoriteButton.swift */,
+				AF570F162CDCED050072E1DF /* PhotoManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -424,6 +431,14 @@
 				AF3A6CEC2A6ADE11004A6C30 /* Info.plist */,
 			);
 			path = CS193Intent;
+			sourceTree = "<group>";
+		};
+		AF570F152CDCECE00072E1DF /* PhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				AF570F182CDCED230072E1DF /* PhotoLibraryView.swift */,
+			);
+			path = PhotoView;
 			sourceTree = "<group>";
 		};
 		AF635CC02A643C3D0055D456 /* Categories */ = {
@@ -722,6 +737,7 @@
 			files = (
 				AF2944B52AACB0BE006F0ED1 /* PanelWidget.swift in Sources */,
 				84FF60822A695E66002508F9 /* EpisodeStore.swift in Sources */,
+				AF570F1A2CDCF2E80072E1DF /* PhotoManager.swift in Sources */,
 				8431486D2A67D030002C4025 /* CS193pSmallWidget.swift in Sources */,
 				84FF607B2A6951D8002508F9 /* Episode.swift in Sources */,
 				AF4FED572A91F85B00F0BF8C /* Sockets.swift in Sources */,
@@ -755,6 +771,7 @@
 			files = (
 				AFA7D0112A61AFC7000D6AC9 /* Hike.swift in Sources */,
 				842A26C42A651ECA007E276B /* PageView.swift in Sources */,
+				AF570F172CDCED050072E1DF /* PhotoManager.swift in Sources */,
 				AF4FED522A91EEBB00F0BF8C /* AudioPlayer.swift in Sources */,
 				84C2AB872A6149C80086FCDE /* HexagonParameters.swift in Sources */,
 				84FF607D2A695412002508F9 /* PlayButtonIcon.swift in Sources */,
@@ -767,6 +784,7 @@
 				842A26BB2A64EAEE007E276B /* HikeBadge.swift in Sources */,
 				842A26C72A6534B9007E276B /* PageControl.swift in Sources */,
 				84FF60892A6966B1002508F9 /* FormatterExtension.swift in Sources */,
+				AF570F192CDCED230072E1DF /* PhotoLibraryView.swift in Sources */,
 				AF3E349F2A643FEB00C89AF7 /* CategoryRow.swift in Sources */,
 				845491482A5FA92700DEA382 /* MapView.swift in Sources */,
 				AF3A6CFA2A6B8224004A6C30 /* CS193pWidgetConfigurations.intentdefinition in Sources */,
@@ -1089,6 +1107,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CS193p/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need the write permission for the photos so that you can delete and categorize photos and videos in our app directly.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need the read permission for photos to help you identify similar photos, blurry photos, etc. so that you can delete and organize them easily.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1131,6 +1151,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CS193p/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need the write permission for the photos so that you can delete and categorize photos and videos in our app directly.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need the read permission for photos to help you identify similar photos, blurry photos, etc. so that you can delete and organize them easily.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

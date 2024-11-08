@@ -10,46 +10,40 @@
 
 import WidgetKit
 import SwiftUI
+import Photos
  
-// MARK: - RotationEffect
-struct RotationEffect: GeometryEffect {
-    var angle: Double
-    
-    var animatableData: Double {
-        get {
-            angle
-        }
-        set {
-            angle = newValue
-        }
-    }
-    
-    func effectValue(size: CGSize) -> ProjectionTransform {
-        let radians = CGFloat(Angle.degrees(angle).radians)
-        let transform = CGAffineTransform(translationX: size.width / 2.0, y: size.height / 2.0)
-            .rotated(by: radians)
-            .translatedBy(x: -size.width / 2.0, y: -size.height / 2.0)
-        print("angle: \(angle)")
-        return ProjectionTransform(transform)
-    }
-}
  
-// MARK: - CaffeineIntentProvider
+// MARK: - PhotoWallProvider
 struct PhotoWallProvider: TimelineProvider {
     public typealias Entry = PhotoWallEntry
     
     func placeholder(in context: Context) -> PhotoWallEntry {
-        PhotoWallEntry(imgName: "IMG_6987")
+        PhotoWallEntry(date: Date.now, photoIdentifiers: [])
     }
     
     func getSnapshot(in context: Context, completion: @escaping (PhotoWallEntry) -> Void) {
-        let entry = PhotoWallEntry(imgName: "IMG_6987")
+        let entry = PhotoWallEntry(date: Date.now, photoIdentifiers: [])
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<PhotoWallEntry>) -> Void) {
-        let entry = PhotoWallEntry(imgName: "IMG_6987")
-        let timeline = Timeline(entries: [entry], policy: .never)
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        let assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        var identifiers: [String] = []
+        
+        // 只存储标识符
+        assets.enumerateObjects { asset, _, _ in
+            identifiers.append(asset.localIdentifier)
+        }
+        
+        let entry = PhotoWallEntry(
+            date: Date(),
+            photoIdentifiers: identifiers
+        )
+        
+        let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
     }
 }
@@ -58,73 +52,54 @@ struct PhotoWallProvider: TimelineProvider {
 // MARK: - CaffeineTrackerWidget
 
 struct PhotoWallEntry: TimelineEntry {
-    let date: Date = Date()
-    let imgName: String
+    let date: Date
+    let photoIdentifiers: [String]  // 存储照片标识符
 }
 
 struct PhotoWallWidgetEntryView: View {
-    @Environment(\.widgetFamily) var family
+    @Environment(\.widgetFamily) var family // 获取 widget 尺寸
     var entry: PhotoWallEntry
-
-    var body: some View {
-        // 1.0 初始旋转矩阵(假设)
-        let size = CGSize(width: 120, height: 120)
-        // 10s内转动360度, 单次角度36
-        let radians = CGFloat(Angle.degrees(30).radians)
-//        let rMatrix = CGAffineTransform(translationX: size.width / 2.0, y: size.height / 2.0)
-//            .rotated(by: radians)
-//            .translatedBy(x: -size.width / 2.0, y: -size.height / 2.0)
-        
-        let rMatrix = CGAffineTransform(rotationAngle: radians)
-        // let rMatrix = CGAffineTransformMakeRotation(radians)
-        
-        // 2.0 目标矩阵, 每次向右平移10px
-        let targetMatrix = CGAffineTransform(a: 0, b: -1, c: 1, d: 0, tx: 0, ty: 0)
-        
-        // 3.0 转换矩阵 = rMatrix^-1 * targetMatrix
-        // let transform = rMatrix.inverted().concatenating(targetMatrix)
     
-        return VStack(alignment: .leading) {
-            HStack {
-                Spacer()
-                Image(entry.imgName, bundle: nil)
-                    .resizable()
-                    .frame(width: 120, height: 120, alignment: .center)
-                    .background(Color.yellow)
-                    ._clockHandRotationEffect(.custom(10), in: .current, anchor: .center)
-                    .transformEffect(targetMatrix)
-                    
-                /*
-                 ._clockHandRotationEffect(.custom(10), in: .current, anchor: .center)
-                 .scaleEffect(x:1, y: 2, anchor: .trailing)
-                 */
-                
-                Spacer()
-            }
+    func loadImage(identifier: String) -> UIImage? {
+        let result = PHAsset.fetchAssets(withLocalIdentifiers: [identifier], options: nil)
+        guard let asset = result.firstObject else { return nil }
+        
+        var resultImage: UIImage?
+        let options = PHImageRequestOptions()
+        options.isSynchronous = true
+        options.deliveryMode = .opportunistic  // 改用高质量图片
+        
+        // 根据 widget 尺寸请求合适大小的图片
+        // let targetSize = family == .systemSmall ? CGSize(width: 158, height: 158) : CGSize(width: 338, height: 158)
+        let targetSize = CGSize(width: 300, height: 300)
+        PHImageManager.default().requestImage(
+            for: asset,
+            targetSize: targetSize,
+            contentMode: .aspectFill,
+            options: options
+        ) { image, _ in
+            resultImage = image
         }
-        .containerBackground(.fill.tertiary, for: .widget)
+        
+        return resultImage
     }
-
-        
-        /*
-        let size = CGSize(width: 150, height: 150)
-        let radians = CGFloat(Angle.degrees(-6.0).radians)
-        let transform = CGAffineTransform(translationX: size.width / 2.0, y: size.height / 2.0)
-        .rotated(by: radians)
-        .translatedBy(x: -size.width / 2.0, y: -size.height / 2.0)
-        
-        return VStack(alignment: .leading) {
-            HStack {
-                Spacer()
-                Text("测试文本测试文本!")
-                    .background(.red)
-                    ._clockHandRotationEffect(.secondHand, in: .current, anchor: .center)
-                    .scaleEffect(CGSize(width: 2.0, height: 1.0))
-                Spacer()
-            }
+    
+    var body: some View {
+        let firstIdentifier = entry.photoIdentifiers.first
+        if let firstIdentifier = firstIdentifier,
+           let image = loadImage(identifier: firstIdentifier) {
+            Image(uiImage: image)
+                .resizable()
+                .aspectRatio(contentMode: .fit) // 填充模式
+                .frame(maxWidth: .infinity, maxHeight: .infinity) // 填充整个空间
+                .clipped() // 裁剪超出部分
+                .containerBackground(.fill.tertiary, for: .widget)
+        } else {
+            Text(firstIdentifier ?? "no image")
+                .containerBackground(.fill.tertiary, for: .widget)
         }
-        .containerBackground(.fill.tertiary, for: .widget)
-    }*/
+        
+    }
 }
 
 struct PhotoWallWidget: Widget {
@@ -132,6 +107,9 @@ struct PhotoWallWidget: Widget {
         StaticConfiguration(kind: "PhotoWallWidget", provider: PhotoWallProvider()) { entry in
             PhotoWallWidgetEntryView(entry: entry)
         }
+        .configurationDisplayName("照片墙")
+        .description("显示最新照片")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge]) // 支持的尺寸
         .contentMarginsDisabled()
     }
 }
@@ -140,13 +118,13 @@ struct PhotoWallWidget: Widget {
 #Preview(as: .systemLarge, widget: {
     PhotoWallWidget()
 }, timeline: {
-    PhotoWallEntry(imgName: "IMG_6987")
+    PhotoWallEntry(photoIdentifiers: [])
 })
  */
 
 struct PhotoWallWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let view = PhotoWallWidgetEntryView(entry: PhotoWallEntry(imgName: "IMG_6987"))
+        let view = PhotoWallWidgetEntryView(entry: PhotoWallEntry(date: .now, photoIdentifiers: []))
         view.previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

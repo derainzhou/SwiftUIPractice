@@ -118,7 +118,6 @@ struct CS193pWidgetSmallEntryView : View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
-                    ._clockHandRotationEffect(.secondHand, in: .current, anchor: .center)
                     .scaleEffect(CGSize(width: 2.0, height: 2.0))
                 
                 Spacer()
